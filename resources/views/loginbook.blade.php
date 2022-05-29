@@ -35,15 +35,9 @@
                         <li class="nav-item text-white">
                             <a class="nav-link" href="/#about">About Us</a>
                         </li>
-                        @if(isset(Auth::user()->username))
-                        <li class="nav-item text-white">
-                            <a class="nav-link" href="/booklist">Add Book</a>
-                        </li>
-                        @else
                         <li class="nav-item text-white">
                             <a class="nav-link" href="/booklist">Book List</a>
                         </li>
-                        @endif
                         @if(isset(Auth::user()->username))
                         <li class="nav-item text-white">
                             <a class="nav-link active text-white" aria-current="page"
@@ -101,8 +95,6 @@
         </div>
 
         @elseif($layout == 'showAll')
-
-        @if(isset(Auth::user()->username))
         <div class="mb-5 container containerList">
             <h2 class="mb-5 text-white">Add Book</h2>
             <div class="container border containerTable">
@@ -189,48 +181,8 @@
                     </tbody>
                 </table>
             </div>
+
         </div>
-        @else
-        <div class="container containerList" id="booklist">
-            <img class="m-2" src="/images/logo.png" alt="logo">
-
-            <div class="container containerSearch">
-                <div class="input-group mb-3 p-3 ">
-                    <input type="text" class="form-control searchBar" placeholder="Search"
-                        aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn buttonSearch" type="button" id="button-addon2">
-                        <img width="60%" src="/images/search.png" alt="">
-                    </button>
-                </div>
-            </div>
-
-            <div class="container border containerTable">
-
-                <table class="table border text-white">
-                    <thead>
-                        <tr>
-                            <th scope="col">No</th>
-                            <th scope="col">Judul Buku</th>
-                            <th scope="col">Penulis</th>
-                            <th scope="col">Tahun Terbit</th>
-                            <th scope="col">Sinopsis</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($books as $book)
-                        <tr>
-                            <td>{{$book->id}}</td>
-                            <td>{{$book->judul}}</td>
-                            <td>{{$book->penulis}}</td>
-                            <td>{{$book->tahunterbit}}</td>
-                            <td>{{$book->sinopsis}}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        @endif
 
         @elseif($layout == 'edit')
         <div class="mb-5 container containerList">

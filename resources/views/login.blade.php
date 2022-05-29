@@ -54,15 +54,40 @@
                     <div class="container loginCard p-4">
                         <h2 class="mb-5 mt-5 text-white text-center">LOGIN</h2>
 
-                        <form class="justify-content-center p-4">
+                        @if(isset(Auth::user()->username))
+                        <script>
+                        window.location = "/successlogin";
+                        </script>
+                        @endif
+
+                        @if ($message = Session::get('error'))
+                        <div class="alert alert-danger alert-block">
+                            <button type="button" class="btn-close" aria-label="Close"></button>
+                            <strong>{{ $message }}</strong>
+                        </div>
+                        @endif
+
+                        @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+
+                        <form action="{{ url('/checklogin') }}" method="get" class="justify-content-center p-4">
+                            @csrf
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label text-white">Username</label>
-                                <input type="email" class="form-control inputLogin" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                <input type="username" class="form-control inputLogin" id="username" name="username"
+                                    required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label text-white">Password</label>
-                                <input type="password" class="form-control inputLogin" id="exampleInputPassword1">
+                                <input type="password" class="form-control inputLogin" id="password" name="password"
+                                    required>
                             </div>
                             <button type="submit" class="btn btn-primary buttonLogin">Login</button>
                         </form>

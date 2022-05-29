@@ -131,7 +131,7 @@ class BookController extends Controller
 
     public function successlogin() {
         $books = Book::all();
-        return view('book',['books'=>$books,'layout'=>'index']);
+        return view('loginbook',['books'=>$books,'layout'=>'index']);
     }
 
     public function logout() {
