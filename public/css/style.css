@@ -96,12 +96,6 @@
 
 /* BOOK LIST */
 
-/* .colAdd {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
 .inputAdd {
     width: 80% !important;
     border-radius: 20px !important;
@@ -143,6 +137,17 @@
     width: 80%;
     border-radius: 20px;
     padding: 40px;
+}
+
+.buttonEdit {
+    background-color: rgba(255, 214, 0, 1) !important;
+    margin-right: 10px;
+}
+
+.actionButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 /* END BOOKLIST */

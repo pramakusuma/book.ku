@@ -112,9 +112,8 @@
                             </div>
                             <div class="mb-3">
                                 <label class="text-white text-center" for="sinopsis">Sinopsis</label>
-                                <textarea height="200px" placeholder="Sinopsis" type="text"
-                                    class="form-control inputAdd text-center" id="sinopsis" name="sinopsis">
-                                </textarea>
+                                <textarea height="200px" type="text" class="form-control inputAdd text-center"
+                                    id="sinopsis" name="sinopsis"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary buttonAdd">Add Book</button>
                         </form>
@@ -158,12 +157,17 @@
                             <td>{{$book->tahunterbit}}</td>
                             <td>{{$book->sinopsis}}</td>
                             <td>
-                                <a href="{{ url('/booklist/edit/'.$book->id) }}" class="btn buttonEdit">
-                                    <img src="/images/edit.png" alt="edit">
-                                </a>
-                                <a href="{{ url('/booklist/delete/'.$book->id) }}" class="btn buttonDelete">
-                                    <img src="/images/delete.png" alt="edit">
-                                </a>
+                                <div class="actionButton">
+                                    <a href="{{ url('/edit/'.$book->id) }}" class="btn buttonEdit">
+                                        <img src="/images/edit.png" alt="edit">
+                                    </a>
+                                    <form action="{{ url('/delete/'.$book->id) }}" method="post">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger buttonDelete">
+                                            <img src="/images/delete.png" alt="delete">
+                                        </button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                         @endforeach
@@ -173,12 +177,9 @@
 
         </div>
 
-        @elseif($layout == 'create')
-        @elseif($layout == 'show')
-
         @elseif($layout == 'edit')
         <div class="mb-5 container containerList">
-            <h2 class="mb-5 text-white">Add Book</h2>
+            <h2 class="mb-5 text-white">Edit Book</h2>
             <div class="container border containerTable">
                 <div class="row">
                     <div class="col">
@@ -202,65 +203,20 @@
                             </div>
                             <div class="mb-3">
                                 <label class="text-white text-center" for="sinopsis">Sinopsis</label>
-                                <textarea value="{{ $book->sinopsis }}" height="200px" placeholder="Sinopsis"
-                                    type="text" class="form-control inputAdd text-center" id="sinopsis" name="sinopsis">
+                                <textarea height="200px" type="text" class="form-control inputAdd text-center"
+                                    id="sinopsis" name="sinopsis">{{ $book->sinopsis }}
                                 </textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary buttonAdd">Add Book</button>
+                            <button type="submit" class="btn btn-primary buttonAdd">Edit Book</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="container containerList" id="booklist">
-            <img class="m-2" src="/images/logo.png" alt="logo">
 
-            <div class="container containerSearch">
-                <div class="input-group mb-3 p-3 ">
-                    <input type="text" class="form-control searchBar" placeholder="Search"
-                        aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn buttonSearch" type="button" id="button-addon2">
-                        <img width="60%" src="/images/search.png" alt="">
-                    </button>
-                </div>
-            </div>
-
-            <div class="container border containerTable">
-
-                <table class="table border text-white">
-                    <thead>
-                        <tr>
-                            <th scope="col">No</th>
-                            <th scope="col">Judul Buku</th>
-                            <th scope="col">Penulis</th>
-                            <th scope="col">Tahun Terbit</th>
-                            <th scope="col">Sinopsis</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($books as $book)
-                        <tr>
-                            <td>{{$book->id}}</td>
-                            <td>{{$book->judul}}</td>
-                            <td>{{$book->penulis}}</td>
-                            <td>{{$book->tahunterbit}}</td>
-                            <td>{{$book->sinopsis}}</td>
-                            <td>
-                                <button class="btn buttonEdit">
-                                    <img src="/images/edit.png" alt="edit">
-                                </button>
-                                <button class="btn buttonDelete">
-                                    <img src="/images/delete.png" alt="edit">
-                                </button>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        @elseif($layout == 'create')
+        @elseif($layout == 'show')
         @endif
 
     </div>
@@ -272,7 +228,7 @@
                 </div>
                 <div class="col colFooter2">
                     <div class="row">
-                        <h3>Contact Me</h3>
+                        <h3>Contact Us</h3>
                     </div>
                     <div class="row">
                         <div class="col">

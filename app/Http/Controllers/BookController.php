@@ -76,7 +76,6 @@ class BookController extends Controller
         $book = Book::find($id);
         $books = Book::all();
         return view('book', ['books'=>$books,'book'=>$book,'layout'=>'edit']);
-
     }
 
     /**
