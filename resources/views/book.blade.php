@@ -17,7 +17,7 @@
     <div class="bg">
         <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img width="70%" src="/images/logo.png" alt="Book.Ku">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -30,13 +30,13 @@
                             <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item text-white">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="#footer">Contact</a>
                         </li>
                         <li class="nav-item text-white">
-                            <a class="nav-link" href="#">About Us</a>
+                            <a class="nav-link" href="#about">About Us</a>
                         </li>
                         <li class="nav-item text-white">
-                            <a class="nav-link" href="#">Book List</a>
+                            <a class="nav-link" href="/">Book List</a>
                         </li>
                         <li class="nav-item text-white">
                             <button class="btn btn-primary">Login</button>
@@ -47,17 +47,29 @@
         </nav>
 
         @if($layout == 'index')
-        <img class="header" width="80%" src="/images/header.png" alt="header">
+        <img id="header" class="header" width="80%" src="/images/header.png" alt="header">
         <h3 class="judul">Mencari Buku dengan Mudah</h3>
-        <div class="container">
+        <div class="container col-md-12">
             <div class="row rowMenu">
-                <div class="col colMenu col-lg-2">tes</div>
-                <div class="col colMenu col-lg-2"></div>
-                <div class="col colMenu col-lg-2"></div>
+                <div class="col colMenu col-md-2">
+                    <h5 class="text-white text-center mt-5">Survei Kepuasan Pengguna</h5>
+                    <img class="imageMenu" src="/images/menu1.png" alt="survei">
+                    <button class="btn btn-primary buttonMenu">Klik Disini</button>
+                </div>
+                <div class="col colMenu col-md-2">
+                    <h5 class="text-white text-center mt-5">Video Tutorial Penggunaan</h5>
+                    <img class="imageMenu" src="/images/menu2.png" alt="survei">
+                    <button class="btn btn-primary buttonMenu">Klik Disini</button>
+                </div>
+                <div class="col colMenu col-md-2">
+                    <h5 class="text-white text-center mt-5">Daftar Buku</h5>
+                    <img class="imageMenu" src="/images/menu3.png" alt="survei">
+                    <button class="btn btn-primary buttonMenu">Klik Disini</button>
+                </div>
             </div>
         </div>
 
-        <div class="container about">
+        <div class="container containerAbout col-md-8" id="about">
             <div class="row rowAbout">
                 <div class="col colAbout">
                     <h3>About Us</h3>
@@ -81,24 +93,32 @@
         @endif
 
     </div>
-    <div class="footer">
+    <div class="footer" id="footer">
         <div class="container containerFooter">
             <div class="row rowFooter">
                 <div class="col colFooter">
                     <img src="/images/logo.png" alt="">
                 </div>
                 <div class="col colFooter2">
-                    <h3>Contact Me</h3>
-                    <div class="col">
-                        <img src="/images/mail.png" alt="">
-
+                    <div class="row">
+                        <h3>Contact Me</h3>
                     </div>
-                    <div class="col">
-                        <p>book.ku@gmail.com</p>
-                        <p>+62 8473 13456</p>
-
+                    <div class="row">
+                        <div class="col">
+                            <img width="10%" src="/images/mail.png" alt="">
+                        </div>
+                        <div class="col">
+                            <p>book.ku@gmail.com</p>
+                        </div>
                     </div>
-
+                    <div class="row">
+                        <div class="col">
+                            <img width="10%" src="/images/wa.png" alt="">
+                        </div>
+                        <div class="col">
+                            <p>+62 8473 13456</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
