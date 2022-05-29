@@ -1,0 +1,67 @@
+.bg {
+    background: linear-gradient(
+        180deg,
+        #0ba1dd 8.26%,
+        rgba(217, 217, 217, 0) 100%
+    );
+}
+.navbar-brand {
+    margin-left: 30px;
+}
+
+.navbar-nav {
+    margin-left: 60%;
+}
+
+.nav-item {
+    color: white;
+    padding-left: 10px;
+}
+
+.containerLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loginCard {
+    background-color: rgba(34, 86, 205, 1);
+    border-radius: 50px;
+    height: 600px;
+    width: 300px;
+    margin-top: 50px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center;  */
+    padding: 40px;
+}
+
+.inputLogin {
+    width: 200px;
+}
+
+.buttonLogin {
+    width: 150px;
+    background-color: white !important;
+    color: black !important;
+    border-radius: 20px !important;
+}
+
+.loginGmail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonGmail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    background-color: white !important;
+    color: black !important;
+    border-radius: 20px !important;
+}

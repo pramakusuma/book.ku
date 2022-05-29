@@ -18,6 +18,12 @@ class BookController extends Controller
         return view('book',['books'=>$books,'layout'=>'index']);
     }
 
+    public function showAll()
+    {
+        $books = Book::all();
+        return view('book',['books'=>$books,'layout'=>'showAll']);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -43,7 +49,7 @@ class BookController extends Controller
         $book->tahunterbit = $request->input('tahunterbit');
         $book->sinopsis = $request->input('sinopsis');
         $book->save();
-        return redirect('/');
+        return redirect('/booklist/#booklist');
     }
 
     /**
@@ -88,7 +94,7 @@ class BookController extends Controller
         $book->tahunterbit = $request->input('tahunterbit');
         $book->sinopsis = $request->input('sinopsis');
         $book->save();
-        return redirect('/');
+        return redirect('/booklist/#booklist');
     }
 
     /**
@@ -101,6 +107,6 @@ class BookController extends Controller
     {
         $book = Book::find($id);
         $book->delete();
-        return redirect('/');
+        return redirect('/booklist/#booklist');
     }
 }
