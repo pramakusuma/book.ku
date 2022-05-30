@@ -282,19 +282,21 @@
                     <img src="/images/logo.png" alt="">
                 </div>
                 <div class="col colFooter2">
-                    <div class="row">
-                        <h3>Contact Us</h3>
+                    <div class="row rowContact">
+                        <div class="col colContact">
+                            <h3>Contact Us</h3>
+                        </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
+                    <div class="row rowImage">
+                        <div class="col colImage">
                             <img width="10%" src="/images/mail.png" alt="">
                         </div>
                         <div class="col">
                             <p>book.ku@gmail.com</p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
+                    <div class="row rowImage">
+                        <div class="col colImage">
                             <img width="10%" src="/images/wa.png" alt="">
                         </div>
                         <div class="col">
